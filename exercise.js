@@ -39,6 +39,14 @@ console.log( you.returnPerson() + " \v" + you.gender );
 [[ Number ]]
 1. NaN / Infinity / -Infinity --> Number
 2. Number(parameter); parseInt(parameter); parseFloat(parameter) --> Global Methods
+3. valueOf
+In JavaScript, a number can be a primitive value (typeof = number) or an object (typeof = object).
+The valueOf() method is used internally in JavaScript to convert Number objects to primitive values.
+There is no reason to use it in your code.
+All JavaScript data types have a valueOf() and a toString() method.
+
+
+
 
 [[ Random ]]
 1. Math.random()

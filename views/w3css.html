@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+  <script>
+
+   function onloadFunc(){
+     document.getElementById("amchart").innerHTML = "<object type=\"text/html\" data=\"/views/samples/radarSimple.html\" ></object>";
+   }
+
+  </script>
+</head>
+
 <title>W3.CSS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
-<body>
+<body onload="javascript:onloadFunc();">
 
 <header class="w3-container w3-teal">
   <h1>Header</h1>
@@ -44,7 +55,8 @@
 
   <div class="w3-half">
     <div class="w3-card-2">
-      <img src="img_london.jpg" alt="London" style="width:100%">
+      <!--<img src="img_london.jpg" alt="London" style="width:100%"> -->
+      <div id="amchart"> </div>
       <div class="w3-container">
         <p>London is the capital city of England.</p>
         <p>It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
