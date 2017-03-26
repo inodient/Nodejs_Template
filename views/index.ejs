@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <% include partials/head.ejs %>
+
+  <style>
+    .jumbotron {
+      padding: 150px 25px;
+    }
+    .container-fluid {
+      padding: 60px 50px;
+    }
+    .logo {
+        font-size: 200px;
+    }
+    .bg-grey {
+        background-color: #f6f6f6;
+    }
+    @media screen and (max-width: 768px) {
+        .col-sm-4 {
+            text-align: center;
+            margin: 25px 0;
+        }
+    }
+    .bg-4 {
+      background-color: #2f2f2f; /* Black Gray */
+      color: #fff;
+    }
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <% include partials/header.ejs %>
+  </header>
+
+  <!-- Introduce -->
+  <div class="jumbotron text-center bg-4">
+    <h1>Welcome PAT</h1>
+    <p>We give you templates for your life.</p>
+    <form class="form-inline" action="/main">
+      <div class="input-group">
+        <input type="text" class="form-control" size="50" placeholder="Search Project" required>
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-default">Search</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- About section -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-8">
+        <h2>Performance Anaysis Template</h2>
+        <h4>Manage your performance</h4>
+        <p>We give you some templates for managing your life.<br>
+          You can manage all kinds of performance such as jobs, studies, projects etc. <br>
+          Do make and manage your templates. <br>
+        </p>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-list-alt logo"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Section -->
+  <div class="container-fluid bg-grey">
+    <div class="row">
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-th-list logo"></span>
+      </div>
+      <div class="col-sm-8">
+        <h2>We can make these using this!</h2>
+        <h4>You can manage your performances divided some categories</h4>
+        <p>You can manage your performances divided some categories</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-fast-backward logo"></span>
+      </div>
+      <div class="col-sm-8">
+        <h2>Histroy Tracking</h2>
+        <h4>You can track your histories and learn about you.</h4>
+        <p>You can track your histories and learn about you.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid bg-grey">
+    <div class="row">
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-cloud-upload logo"></span>
+      </div>
+      <div class="col-sm-8">
+        <h2>Share Your Projects</h2>
+        <h4>You can share your projects to Facebook, Instargram and LinkedIn.</h4>
+        <p>You can share your projects to Facebook, Instargram and LinkedIn.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="container-fluid">
+    <h2 class="text-center">CONTACT</h2>
+    <div class="row">
+      <div class="col-sm-5">
+        <p>Contact us and we'll get back to you within 24 hours.</p>
+        <p><span class="glyphicon glyphicon-map-marker"></span> Incheon, South Korea</p>
+        <p><span class="glyphicon glyphicon-phone"></span> +82 1515151515</p>
+        <p><span class="glyphicon glyphicon-envelope"></span> inodient@gmail.com</p>
+      </div>
+      <div class="col-sm-7">
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+          </div>
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+          </div>
+        </div>
+        <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <button class="btn btn-default pull-right" type="submit">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <% include partials/footer.ejs %>
+  </footer>
+
+</body>
+</html>
