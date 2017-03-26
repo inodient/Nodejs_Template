@@ -1,0 +1,479 @@
+<!DOCTYPE HTML>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <style>
+  .table-fixed{
+      width: 100%;
+      /*background-color: #f3f3f3;*/
+      tbody{
+        height:200px;
+        overflow-y:auto;
+        width: 100%;
+        }
+      thead,tbody,tr,td,th{
+        display:block;
+      }
+      tbody{
+        td{
+          float:left;
+        }
+      }
+      thead {
+        tr{
+          th{
+            float:left;
+           /*background-color: #f39c12;
+           border-color:#e67e22;*/
+          }
+        }
+      }
+    }
+
+    #fixed_div{
+      height: 150px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      margin-bottom: 30px;
+      border-bottom: 1px solid lightgray;
+    }
+
+    div{
+      /* border: 0.5px solid black; */
+    }
+
+  </style>
+
+</head>
+<body>
+  <header class="container-fluid">
+    <p><h4> Gate Preview Request </h4></p>
+    <div class="container-fluid">
+      <div class="well well-sm well-lg">
+        <p>
+          <button type="button" class="btn btn-sm btn-success">Send</button>
+          <button type="button" class="btn btn-sm btn-danger">Cancel</button>
+        </p>
+      </div>
+    </div>
+  </header>
+  <div class="container-fluid">
+    <div class="container-fluid">
+      <p>
+        <span>Reviewer</span>
+        <button type="button" class="btn btn-sm btn-default pull-right">Add</button>
+        <button type="button" class="btn btn-sm btn-default pull-right">Delete</button>
+      </p>
+      <div class="container-fluid" id="fixed_div">
+        <table class="table table-bordered table-hover table-condensed table-striped">
+          <thead>
+            <th class="col-sm-1"></th>
+            <th class="col-sm-4">Name</th>
+            <th class="col-sm-7">Dept</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <p>
+        <span>CC</span>
+        <button type="button" class="btn btn-sm btn-default">Add</button>
+        <button type="button" class="btn btn-sm btn-default">Delete</button>
+      </p>
+      <div class="container-fluid" id="fixed_div">
+        <table class="table table-bordered table-hover table-condensed table-striped">
+          <thead>
+            <th class="col-sm-1"></th>
+            <th class="col-sm-4">Name</th>
+            <th class="col-sm-7">Dept</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>
+                name
+              </td>
+              <td>
+                dept
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="well well-sm well-lg">
+        <p>Comment</p>
+        <textarea class="form-control" rows="5"></textarea>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <table class="table table-bordered">
+        <tr>
+          <td>Preview Due Date</td>
+          <td>
+            <input type="date"/>
+          </td>
+          <td>Review Date</td>
+          <td>
+            <input type="date"/>
+          </td>
+        </tr>
+        <tr>
+          <td>File</td>
+          <td colspan="2"></td>
+          <td>
+            <button type="button" class="btn btn-sm btn-default">Add File</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
