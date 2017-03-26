@@ -26,6 +26,10 @@ app.get( "/amchart", (req, res) => {
   res.render( "samples/radarSimple.html" );
 } );
 
+app.get( "/company", function(req, res){
+  res.render( "company_template.html" );
+});
+
 app.listen( 3000, () => {
   console.log( "Listen port 3000..." );
 } );
