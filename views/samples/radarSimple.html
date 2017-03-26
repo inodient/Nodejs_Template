@@ -7,7 +7,6 @@
         <link rel="stylesheet" href="style.css" type="text/css">
         <script src="amcharts.js" type="text/javascript"></script>
         <script src="radar.js" type="text/javascript"></script>
-        <script src="amcharts/plugins/responsive/responsive.min.js" type="text/javascript"></script>
 
         <script>
             var chart;
@@ -70,10 +69,6 @@
                 chart.addGraph(currentGraph);
 
                 // WRITE
-                chart.responsive = {
-                  "enabled": true
-                };
-
                 chart.write("chartdiv");
             });
         </script>
