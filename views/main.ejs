@@ -5,15 +5,31 @@
 
   <style>
     .container-fluid {
-        padding: 60px 50px;
+      padding: 60px 50px;
+    }
+    .col-sm-6 {
+      padding-top: 50px;
+    }
+    .col-sm-4 {
+      padding-top: 60px;
+      padding-left: 50px;
+      padding-right: 100px;
     }
     .bg-grey {
         background-color: #f6f6f6;
     }
     @media screen and (max-width: 768px) {
-        .container-fluid{
-            padding: 10px;
-        }
+      .container-fluid {
+        padding: 60px 15px 15px 15px;
+      }
+      .col-sm-6 {
+        padding-top: 0px;
+      }
+      .col-sm-4 {
+        padding-top: 0px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
     }
   </style>
 
@@ -26,29 +42,25 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-1"></div>
-
       <!-- History -->
       <div class="col-sm-6">
-        <div class="container-fluid">
-          <% for( var i=0; i<history.length; i++ ){ %>
-            <h4><a><%= history[i].title %></a></h4>
-            <p><%= history[i].date %></p>
-            <p><%= history[i].content %></p>
-            <hr>
-          <% } %>
-        </div>
+        <hr>
+        <% for( var i=0; i<history.length; i++ ){ %>
+          <h4><a><%= history[i].title %></a></h4>
+          <p><%= history[i].date %></p>
+          <p><%= history[i].content %></p>
+          <hr>
+        <% } %>
       </div>
 
       <!-- Projects -->
       <div class="col-sm-4">
-        <div class="container-fluid">
-          <div class="panel panel-default">
-            <div class="panel-heading"><strong>Your Projects</strong><button class="btn btn-primary btn-sm pull-right padding-bott0m: 5px">Create</button></div>
+        <div class="panel panel-default">
+          <div class="panel-heading"><strong>Your Projects</strong><button class="btn btn-primary btn-sm pull-right padding-bott0m: 5px">Create</button></div>
 
-            <% for( var i=0; i<projects.length; i++ ) { %>
-              <div class="panel-body" style="border-bottom: 1px solid lightgrey"><a href="/performanceView/<%= projects[i].id%>"><strong><%=projects[i].name %></strong></a></div>
-            <% } %>
-          </div>
+          <% for( var i=0; i<projects.length; i++ ) { %>
+            <div class="panel-body" style="border-bottom: 1px solid lightgrey"><a href="/performanceView/<%= projects[i].id%>"><strong><%=projects[i].name %></strong></a></div>
+          <% } %>
         </div>
       </div>
       <div class="col-sm-1"></div>
