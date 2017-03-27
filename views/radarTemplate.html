@@ -162,7 +162,11 @@ var chart = AmCharts.makeChart("chartdiv",{
   }, {
     "event": "resized",
     "method": updateLabels
-  }]
+  }],
+  "legend": {
+    "useGraphSettings": true,
+    "font-size": 15
+  }
 });
 
 function updateLabels(event) {

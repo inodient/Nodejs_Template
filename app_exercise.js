@@ -13,8 +13,16 @@ app.get( "/", (req, res) => {
   res.render( "index.ejs" );
 } );
 
+app.get( "/index", (req, res) => {
+  res.render( "index.ejs" );
+} );
+
 app.get( "/login", (req, res) => {
   res.render( "login.ejs" );
+});
+
+app.get( "/facebookLogin", (req,res) => {
+  res.render( "facebookLogin.html" );
 });
 
 app.get( "/main", (req, res) => {
@@ -124,7 +132,11 @@ app.get( "/performanceView/:id", function(req, res){
         "category": "Category 6",
         "value": 1
       },
-    ]
+    ],
+    "legend": {
+      "useGraphSettings": true,
+      "font-size": 15
+    }
   };
 
   var chartContent = [
