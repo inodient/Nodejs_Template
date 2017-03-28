@@ -58,6 +58,9 @@
         <div class="panel panel-default">
           <div class="panel-heading"><strong>Your Projects</strong><button class="btn btn-primary btn-sm pull-right padding-bott0m: 5px">Create</button></div>
 
+          <% if( projects.length == 0 ) {%>
+            <div class="panel-body" style="border-bottom: 1px solid lightgrey"><strong>Create Your Own Project</strong></div>
+          <% } %>
           <% for( var i=0; i<projects.length; i++ ) { %>
             <div class="panel-body" style="border-bottom: 1px solid lightgrey"><a href="/performanceView/<%= projects[i].id%>"><strong><%=projects[i].name %></strong></a></div>
           <% } %>

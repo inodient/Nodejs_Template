@@ -4,13 +4,6 @@
 
   <% include partials/head %>
 
-  <!-- Amchart libraries -->
-  <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-  <script src="https://www.amcharts.com/lib/3/radar.js"></script>
-  <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-  <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
-  <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-
   <script type="text/javascript">
     var chart = AmCharts.makeChart( "chartdiv", JSON.parse( '<%- JSON.stringify( chartOptions ) %>' ) );
   </script>
@@ -71,9 +64,7 @@
     <div class="row">
       <!-- chart -->
       <div class="col-sm-5">
-        <div class="container-fluid chart-container" id="chartdiv">
-          <!-- <span class="glyphicon logo" ></span> -->
-        </div>
+        <div class="container-fluid chart-container" id="chartdiv"></div>
       </div>
 
       <!-- specification -->

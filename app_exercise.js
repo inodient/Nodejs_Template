@@ -7,7 +7,9 @@ app.engine( "html", require("ejs").renderFile );
 
 app.use( express.static("img") );
 app.use( express.static("css") );
+app.use( express.static("js") );
 app.use( express.static("amcharts") );
+
 
 app.get( "/", (req, res) => {
   res.render( "index.ejs" );
@@ -23,6 +25,156 @@ app.get( "/login", (req, res) => {
 
 app.get( "/facebookLogin", (req,res) => {
   res.render( "facebookLogin.html" );
+});
+
+app.get( "/overview", (req, res) => {
+
+  var data = [
+    {
+      text: "Basic Skills",
+      description: "BBB Skills",
+      nodes: [
+        {
+          text: "Algorithm"
+        },
+        {
+          text: "Data Structure"
+        }
+      ]
+    },
+    {
+      text: "Software Development / Running Environment",
+      nodes: [
+        {
+          text: "Languages",
+          nodes : [
+            {
+              text: "Common"
+            },
+            {
+              text: "Web Specifics"
+            },
+          ]
+        },
+        {
+          text: "OS",
+          nodes : [
+            {
+              text: "Fedora"
+            },
+            {
+              text: "Windows"
+            },
+          ]
+        },
+        {
+          text: "Design (UML)"
+        }
+      ]
+    },
+    {
+      text: "Network / System Architecture",
+      nodes: [
+        {
+          text: "Architecture Overview"
+        },
+        {
+          text: "Monitoring",
+          nodes : [
+            {
+              text: "WireShark(Packet)"
+            },
+            {
+              text: "TraceRoute (Port)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      text: "Web Application Development",
+      nodes: [
+        {
+          text: "Architecture Overview"
+        },
+        {
+          text: "Framework (Both C/S)"
+        },
+        {
+          text: "WAS (Web Application Server)"
+        }
+      ]
+    },
+    {
+      text: "Advanced Study & Share Abilities",
+      nodes: [
+        {
+          text: "Machine Learning / Bigdata"
+        },
+        {
+          text: "Search Engine"
+        },
+        {
+          text: "Open Source Project"
+        }
+      ]
+    }
+  ];
+
+  var chartOptions = {
+    "type": "radar",
+    "categoryField": "category",
+    "addClassNames": true,
+    "fontSize": 15,
+    "graphs": [
+      {
+        "valueField": "value"
+      }
+    ],
+    "valueAxes": [
+      {
+        "axisTitleOffset": 20,
+        "minimum": 0,
+        "axisAlpha": 0.5,
+        "dashLength": 3
+      }
+    ],
+    "legend": {
+      "useGraphSettings": true,
+      "font-size": 15
+    },
+    "dataProvider": [
+      {
+        "category": "Category 1",
+        "value": 5,
+      },
+      {
+        "category": "Category 2",
+        "value": 4.5
+      },
+      {
+        "category": "Category 3",
+        "value": 3.7
+      },
+      {
+        "category": "Category 4",
+        "value": 5.0
+      },
+      {
+        "category": "Category 5",
+        "value": 5.8
+      },
+      {
+        "category": "Category 6",
+        "value": 1
+      },
+    ]
+  };
+
+  res.render( "overview.ejs", {
+    data: data,
+    chartOptions: chartOptions
+  });
 });
 
 app.get( "/main", (req, res) => {
@@ -107,6 +259,10 @@ app.get( "/performanceView/:id", function(req, res){
         "dashLength": 3
       }
     ],
+    "legend": {
+      "useGraphSettings": true,
+      "font-size": 15
+    },
     "dataProvider": [
       {
         "category": "Category 1",
@@ -132,11 +288,7 @@ app.get( "/performanceView/:id", function(req, res){
         "category": "Category 6",
         "value": 1
       },
-    ],
-    "legend": {
-      "useGraphSettings": true,
-      "font-size": 15
-    }
+    ]
   };
 
   var chartContent = [

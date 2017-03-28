@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+  <% include partials/head.ejs %>
+
+  <script>
+    $(function(){ $('#tree').treeview({
+        data: JSON.parse( '<%- JSON.stringify( data ) %>' ),         // data is not optional
+        levels: 1
+      });
+    });
+
+    var chart = AmCharts.makeChart( "chartdiv", JSON.parse( '<%- JSON.stringify( chartOptions ) %>' ) );
+  </script>
+
+  <style>
+    .container-fluid {
+      padding: 60px 50px;
+    }
+
+    .row > p {
+      padding-bottom: 60px;
+    }
+
+    #tree-region {
+      padding: 130px 50px;
+    }
+
+    #chartdiv {
+      width: 70%;
+      height: 250px;
+    }
+
+    @media screen and ( max-width:768px ) {
+      .container-fluid {
+        padding: 130px 15px 15px 15px;
+      }
+      .row > p {
+        padding-bottom: 10px;
+      }
+      #tree-region {
+        padding: 10px;
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <% include partials/header_main.ejs %>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div id="tree-region" class="col-sm-3">
+        <div id="tree"></div>
+      </div>
+      <div class="col-sm-9">
+        <div class="containder-fluid">
+
+          <!-- Status -->
+          <div class="row">
+            <div class="container-fluid">
+              <h2>Status</h2>
+              <hr>
+              <div class="col-sm-9" id="chartdiv"></div>
+              <div class="col-sm-3">
+                <div class="panel panel-default">
+                  <div class="panel-body" style="border-bottom: 1px solid lightgrey">High : 7 / 10 </div>
+                  <div class="panel-body" style="border-bottom: 1px solid lightgrey">Average : 5.5 / 10 </div>
+                  <div class="panel-body" style="border-bottom: 1px solid lightgrey">Row : 2 / 10 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="row">
+            <div class="container-fluid">
+              <h2>Description</h2>
+              <hr>
+              <p> I want to develop my skills from Algorithms and Datastructures. As these have concepts of computer architectural philosophy,
+                  I learn and study algorithm and datastruct as my first step.</p>
+            </div>
+          </div>
+
+          <!-- Histroy -->
+          <div class="row">
+            <div class="container-fluid">
+              <h2>History</h2>
+              <hr>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <% include partials/footer.ejs %>
+  </footer>
+
+</body>
+</html>
