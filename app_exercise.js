@@ -29,6 +29,9 @@ app.get( "/facebookLogin", (req,res) => {
 
 app.get( "/overview", (req, res) => {
 
+  console.log( "projectNo : " + req.query.projectNo );
+  console.log( req.params );
+
   var data = [
     {
       text: "Basic Skills",
@@ -175,6 +178,10 @@ app.get( "/overview", (req, res) => {
     data: data,
     chartOptions: chartOptions
   });
+});
+
+app.get( "/overview_partials", (req, res) =>{
+  res.render( "partials/overview_partial.ejs" );
 });
 
 app.get( "/main", (req, res) => {
