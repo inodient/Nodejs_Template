@@ -1,4 +1,6 @@
 const express = require( "express" );
+const cookieParser = require( 'cookie-parser' );
+const session = require( "express-session" );
 const app = express();
 
 app.set( "views", __dirname + "/views" );
@@ -10,9 +12,37 @@ app.use( express.static("css") );
 app.use( express.static("js") );
 app.use( express.static("amcharts") );
 
+app.use( cookieParser() );
+app.use( session({
+  secret: "asdfasdfasdfasdfasdf",
+  resave: false,
+  saveUninitialized: true
+}) );
 
 app.get( "/", (req, res) => {
+
+  // // cookie
+  // res.cookie( "userName", "inodient" );
+  //
+  // if( req.cookies.userName == "inodient" ){
+  //   res.redirect( "/main" );
+  // } else{
+  //   res.render( "index.ejs" );
+  // }
+
+  req.session.userName = "inodient";
+
+  console.log( req.session.userName );
+
+  //res.send( req.session );
   res.render( "index.ejs" );
+
+  // if( req.session.userName === "inodient" ){
+  //   res.redirect( "main" );
+  // } else{
+  //   res.session.userName = "inodient";
+  //   res.render( "index.ejs" );
+  // }
 } );
 
 app.get( "/index", (req, res) => {
@@ -23,7 +53,7 @@ app.get( "/login", (req, res) => {
   res.render( "login.ejs" );
 });
 
-app.get( "/facebookLogin", (req,res) => {
+app.get( "/facebookLogin", (req, res) => {
   res.render( "facebookLogin.html" );
 });
 
