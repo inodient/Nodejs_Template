@@ -27,6 +27,10 @@ app.get( "/facebookLogin", (req,res) => {
   res.render( "facebookLogin.html" );
 });
 
+app.get( "/history", (req, res) => {
+  res.render( "history.ejs" );
+});
+
 app.get( "/overview", (req, res) => {
 
   console.log( "projectNo : " + req.query.projectNo );

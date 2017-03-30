@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <% include partials/head.ejs %>
+
+  <style>
+    .container-fluid {
+      padding: 60px 50px;
+    }
+
+    @media screen and ( max-width:768px ){
+      .container-fluid {
+        padding: 130px 15px 15px 15px;
+      }
+    }
+  </style>
+
+  <script>
+    function changeContent(){
+        document.getElementById( "standard" ).innerHTML = "<h4>STANDARD</h4>";
+        document.getElementById( "contents" ).innerHTML = "<h4>CONTENTS</h4>"
+    }
+  </script>
+
+</head>
+<body>
+
+  <header>
+    <% include partials/header_main.ejs %>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div id="history" class="collapse">
+        <h2>Changing Specifics</h2>
+        <hr>
+        <div class="col-sm-6" id="standard">
+          <ul>
+            <li> Project Name : _projectName </li>
+            <li> Change ID : CH_0000001 </li>
+          </ul>
+        </div>
+        <div class="col-sm-6" id="contents">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+     </div>
+    </div>
+
+    <div class="row">
+      <h2>History</h2>
+      <hr>
+      <div class="col-sm-12">
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Date Time</th>
+                <th>Title</th>
+                <th>Type</th>
+                <th>Change Item</th>
+                <th>Execution</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-toggle="collapse" data-target="#history"> 2017-03-28</td>
+                <td> Project Intializing</td>
+                <td> Improvement </td>
+                <td> JavaScript 5 -> 8 </td>
+                <td> Study JavaScript using w3schools and make git project</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td onclick="javascript:changeContent()"data-toggle="collapse" data-target="#history"> 2017-03-28</td>
+                <td> Project Intializing</td>
+                <td> Mantainance </td>
+                <td> - </td>
+                <td> Algorithm Exercise </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td> 2017-03-28</td>
+                <td> Project Intializing</td>
+                <td> Maintainance </td>
+                <td> - </td>
+                <td> Web Application Architecture Drwaing Exercise </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <% include partials/footer.ejs %>
+  </footer>
+
+</body>
+</html>
