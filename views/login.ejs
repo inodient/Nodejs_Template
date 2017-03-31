@@ -21,6 +21,7 @@
 
 </head>
 <body>
+
   <!-- Introduce -->
   <div class="jumbotron text-center bg-4">
     <h1>Join PAT</h1>
@@ -52,6 +53,7 @@
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-default">Submit</button>
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">Facebook Login</fb:login-button>
           </div>
         </div>
       </form>

@@ -11,6 +11,7 @@ app.use( express.static("img") );
 app.use( express.static("css") );
 app.use( express.static("js") );
 app.use( express.static("amcharts") );
+app.use( express.static("services") );
 
 app.use( cookieParser() );
 app.use( session({
@@ -30,10 +31,6 @@ app.get( "/", (req, res) => {
   //   res.render( "index.ejs" );
   // }
 
-  req.session.userName = "inodient";
-
-  console.log( req.session.userName );
-
   //res.send( req.session );
   res.render( "index.ejs" );
 
@@ -50,6 +47,8 @@ app.get( "/index", (req, res) => {
 } );
 
 app.get( "/login", (req, res) => {
+  console.log( "req.cookies : " + JSON.stringify(req.cookies) );
+
   res.render( "login.ejs" );
 });
 
