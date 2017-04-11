@@ -2,13 +2,37 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meat charset="utf-8">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <title>This is 170313 exercise page.</title>
+
+  <script>
+
+  function attemptLogin(){
+
+    var loginURI = `https://www.facebook.com/v2.8/dialog/oauth?
+                  client_id=177181629465844
+                  &redirect_uri=http://localhost:3000/main
+                  &response_type=code`;
+
+    window.location.href = loginURI;
+  }
+  </script>
+
 </head>
 <body>
   <header>
     <div class="container">
       <p>Header</p>
+      <button onclick="attemptLogin();">LOGIN</button>
     </div>
   </header>
 </body>
+
+
+
+GET graph.facebook.com/debug_token?input_token=EAAChJVAVxPQBAMj3Vg2Ah2dkCH4faTTYZAC7x2Qrs5krrVNEitjN8SdmF60e01OQvZANk23NV1OxYkTypvJlqdViFyh5HZAEldFuvuOWClAxbe52redK7qYD21ODPFC7OWwwCfce86qJmVBOo2Eo90RdaoJ1TYZBZB4UZAaDt5XauuMBkjbUZA3qKQ9ZCf1yiRIZD&expires_in=5397&access_token=b5a6d11e42c3d6b4a0bc3a6d0776af81
+
+https://graph.facebook.com/debug_token?input_token=EAAChJVAVxPQBAA8Pgj1tD2LLcfiGc1IW5ewGrQQq1h8tPe3gbuY8R7CmPV2xkvzt61wfYZCzCCVIjLORIGsGZAgGnxgUNBcOi4VY1xe3lVNXCO1OxryNrIBROoeFXTr9ao9eZBhbNjeg49tek8PeFon948yL9QZD&access_token=177181629465844|bhNmrOsAnpSNAMKrhn57WKYbEhQ
+
+https://graph.facebook.com/v2.8/oauth/access_token?client_id=177181629465844&redirect_uri=http://localhost:3000/main&client_secret=b5a6d11e42c3d6b4a0bc3a6d0776af1&code=AQACuUEWo-LCYRfjrBzcd3HXOvilsjzHu3-YiKS0_FQ0xPjvg6kIAAvPPsLMrnwpKc7HLkUjf392LScTG-Ycm1iQFJDLZUW4j-Sf33_VYDwagM4ABzm6XXXVh2oyafx3SQfvb8GcptQRPdtvOx36CuMYyaqJPqnAMAZhPbFJK6kCjbrohQNolbQ-4LQCoN0yOuIvogXZ52WiTX2Xp4DPDhkvf5UNX4YmzkQk2svpreKaH8yGZaeusT0IW0hn8_yjg6K_hsGAmbvgcBJlvuVP17Wa_MefqM6zWkL6dW9ncOquL-4pZGKVzVf6qydaOISUdMHOe2ZhpCVs7NBE0kuxRx5d
+
+https://oauth/access_token?client_id=177181629465844&client_secret=b5a6d11e42c3d6b4a0bc3a6d0776af1&grant_type=client_credentials

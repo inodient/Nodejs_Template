@@ -1,6 +1,8 @@
 const express = require( "express" );
+const https = require( "https" );
 const cookieParser = require( 'cookie-parser' );
 const session = require( "express-session" );
+const bodyParser = require( "body-parser" );
 const app = express();
 
 app.set( "views", __dirname + "/views" );
@@ -13,12 +15,51 @@ app.use( express.static("js") );
 app.use( express.static("amcharts") );
 app.use( express.static("services") );
 
+app.use( bodyParser.json() );
+app.use( bodyParser.urlencoded({ extended:true }) );
+
+
 app.use( cookieParser() );
 app.use( session({
   secret: "asdfasdfasdfasdfasdf",
   resave: false,
   saveUninitialized: true
 }) );
+
+// function checkLoginStatus( req ){
+//   var reqURL = req.protocol + '://' + req.get('host') + req.originalUrl;
+//
+//   if( req.session.loginStatus ){
+//     switch ( req.session.loginMethod ){
+//       case "facebook":
+//       break;
+//
+//       default:
+//
+//     }
+//
+//     reqURL = req.protocol + '://' + req.get('host') + req.originalUrl;
+//   } else{
+//     reqURL = req.protocol + '://' + req.get('host') + '/login';
+//   }
+//
+//   return reqURL;
+// }
+
+app.get( "/loginCheck", (req, res) => {
+  // if( req.cookies.fbsr_177181629465844 ){
+  //   var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+  //   console.log( fullUrl );
+  // } else{
+  //
+  // }
+
+  if( checkLoginStatus(req) ){
+    res.send( "Login Succeed" );
+  } else{
+    res.send( "Login Failed" );
+  }
+});
 
 app.get( "/", (req, res) => {
 
@@ -32,6 +73,7 @@ app.get( "/", (req, res) => {
   // }
 
   //res.send( req.session );
+
   res.render( "index.ejs" );
 
   // if( req.session.userName === "inodient" ){
@@ -47,8 +89,6 @@ app.get( "/index", (req, res) => {
 } );
 
 app.get( "/login", (req, res) => {
-  console.log( "req.cookies : " + JSON.stringify(req.cookies) );
-
   res.render( "login.ejs" );
 });
 
@@ -216,6 +256,12 @@ app.get( "/overview", (req, res) => {
 app.get( "/overview_partials", (req, res) =>{
   res.render( "partials/overview_partial.ejs" );
 });
+
+app.post( "/main", (req, res) => {
+  console.log( "req.body.projectName : " + req.body.projectName );
+
+  res.send( "main Post" );
+} );
 
 app.get( "/main", (req, res) => {
 
@@ -402,3 +448,34 @@ app.get( "/performanceView/:id", function(req, res){
 app.listen( 3000, () => {
   console.log( "Listen port 3000..." );
 } );
+
+//////////////////////////////////////////
+const fs = require('fs');
+const path = require('path');
+
+let filename = 'controller-dispatcher.json';
+let src = path.join(__dirname + "/controller", filename);
+let destDir = path.join(__dirname, "controller2");
+
+fs.access(destDir, (err) => {
+  if(err)
+    fs.mkdirSync(destDir);
+
+  copyFile(src, path.join(destDir, filename));
+});
+
+
+function copyFile(src, dest) {
+
+  let readStream = fs.createReadStream(src);
+
+  readStream.once('error', (err) => {
+    console.log(err);
+  });
+
+  readStream.once('end', () => {
+    console.log('done copying');
+  });
+
+  readStream.pipe(fs.createWriteStream(dest));
+}
